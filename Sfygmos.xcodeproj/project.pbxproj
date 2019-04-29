@@ -12,6 +12,10 @@
 		F9A610B22260039B009B26E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A610B12260039B009B26E9 /* Assets.xcassets */; };
 		F9A610B52260039B009B26E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A610B32260039B009B26E9 /* LaunchScreen.storyboard */; };
 		F9A610BD226037C4009B26E9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */; };
+		F9AF2D46226A379000EFA974 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D45226A379000EFA974 /* User.swift */; };
+		F9AF2D48226A385B00EFA974 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D47226A385B00EFA974 /* BloodPressure.swift */; };
+		F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */; };
+		F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F9A610B42260039B009B26E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A610B62260039B009B26E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		F9AF2D45226A379000EFA974 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9AF2D47226A385B00EFA974 /* BloodPressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
+		F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				F9A610AA2260039A009B26E9 /* AppDelegate.swift */,
-				F9A610AE2260039A009B26E9 /* Main.storyboard */,
-				F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */,
+				F9AF2D49226A3B0F00EFA974 /* Model */,
+				F9AF2D44226A375B00EFA974 /* View */,
+				F9AF2D43226A375000EFA974 /* Controllers */,
 				F9A610B12260039B009B26E9 /* Assets.xcassets */,
-				F9A610B32260039B009B26E9 /* LaunchScreen.storyboard */,
 				F9A610B62260039B009B26E9 /* Info.plist */,
 			);
 			path = Sfygmos;
+			sourceTree = "<group>";
+		};
+		F9AF2D43226A375000EFA974 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */,
+				F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */,
+				F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F9AF2D44226A375B00EFA974 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9A610B32260039B009B26E9 /* LaunchScreen.storyboard */,
+				F9A610AE2260039A009B26E9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9AF2D49226A3B0F00EFA974 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9AF2D45226A379000EFA974 /* User.swift */,
+				F9AF2D47226A385B00EFA974 /* BloodPressure.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +173,10 @@
 			files = (
 				F9A610BD226037C4009B26E9 /* HomeTableViewController.swift in Sources */,
 				F9A610AB2260039A009B26E9 /* AppDelegate.swift in Sources */,
+				F9AF2D46226A379000EFA974 /* User.swift in Sources */,
+				F9AF2D48226A385B00EFA974 /* BloodPressure.swift in Sources */,
+				F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */,
+				F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
