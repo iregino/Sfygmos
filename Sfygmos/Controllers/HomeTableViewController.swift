@@ -21,6 +21,7 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var pulseLabel: UILabel!
     @IBOutlet weak var weightPicker: UIPickerView!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var weigthUnitLabel: UILabel!
     @IBOutlet weak var measurementSitePicker: UIPickerView!
     @IBOutlet weak var measurementSiteLabel: UILabel!
     @IBOutlet weak var notesTextView: UITextView!
@@ -42,12 +43,12 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     var bloodPressure: BloodPressure?
     
     //Color variables
-    let bpBlue = UIColor.init(red: CGFloat(0), green: CGFloat(191)/255, blue: CGFloat(255)/255, alpha: 1.0)
-    let bpGreen = UIColor.init(red: CGFloat(128)/255, green: CGFloat(255)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpYellow = UIColor.init(red: CGFloat(255)/255, green: CGFloat(255)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpBrown = UIColor.init(red: CGFloat(255)/255, green: CGFloat(191)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpOrange = UIColor.init(red: CGFloat(255)/255, green: CGFloat(128)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpRed = UIColor.init(red: CGFloat(255)/255, green: CGFloat(64)/255, blue: CGFloat(0), alpha: 1.0)
+    let bpBlue = UIColor(red: 0.0, green: 191.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    let bpGreen = UIColor(red: 128.0/255.0, green: 1.0, blue: 0.0, alpha: 1.0)
+    let bpYellow = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+    let bpBrown = UIColor(red: 1.0, green: 191.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpOrange = UIColor(red: 1.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpRed = UIColor(red: 1.0, green: 64.0/255.0, blue: 0.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             updateDiastolicLabel(using: bloodPressure.diastolic)
             pulseLabel.text = String(bloodPressure.pulse)
             if let weight = bloodPressure.weight {
-                 weightLabel.text = String(weight)
+                weightLabel.text = String(weight)
+                weigthUnitLabel.text = bloodPressure.weightUnit
             }
             measurementSiteLabel.text = bloodPressure.measurementSite
             notesTextView.text = bloodPressure.notes
@@ -78,7 +80,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             dateTimePicker.date = Date()
             updateDateLabel(date: dateTimePicker.date)
         }
-
+        
+        //Set pickers to specific values
         systolicPicker.selectRow(40, inComponent:0, animated: true)
         diastolicPicker.selectRow(40, inComponent: 0, animated: true)
         pulsePicker.selectRow(32, inComponent: 0, animated: true)
@@ -170,6 +173,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             let weightIntSelected = weightInt[weightPicker.selectedRow(inComponent: 0)]
             let weightDoubleSelected = weightDouble[weightPicker.selectedRow(inComponent: 1)]
             weightLabel.text = String(Double(weightIntSelected) + weightDoubleSelected)
+            let weightUnitSelected = weightUnit[weightPicker.selectedRow(inComponent: 2)]
+            weigthUnitLabel.text = weightUnitSelected
         } else {
             measurementSiteLabel.text = String(siteMeasurementData[row])
         }
@@ -180,13 +185,14 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
 
     //Adjust cell row height accordingly
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let normalCellHeight = CGFloat(60)
-        let mediumCellHeight = CGFloat(160)
+        let smallCellHeight = CGFloat(55)
+        let normalCellHeight = CGFloat(65)
+        let mediumCellHeight = CGFloat(125)
         let largeCellHeight = CGFloat(210)
         
         switch (indexPath) {
         case [0,0]: //Date Cell
-            return isDatePickerHidden ? normalCellHeight : largeCellHeight
+            return isDatePickerHidden ? smallCellHeight : largeCellHeight
         case [0,1]: //Systolic Cell
             return isSystolicPickerHidden ? normalCellHeight: largeCellHeight
         case [0,2]: //Diastolic Cell
@@ -196,7 +202,7 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         case [1,0]: //Weight Cell
             return isWeightPickerHidden ? normalCellHeight : largeCellHeight
         case [2,0]: //Site Measurement Cell
-            return isMeasurementSitePickerHidden ? normalCellHeight : mediumCellHeight
+            return isMeasurementSitePickerHidden ? smallCellHeight : mediumCellHeight
         case [3,0]:
             return largeCellHeight
         default:
@@ -233,7 +239,7 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         
     } //end tableView(:didSelectRowAt:)
 
-    //Update text color based on systolic number to provide user an instant feedback
+    //Update text color based on systolic value to provide user an instant feedback
     func updateSystolicLabel(using systolic: Int) {
         systolicLabel.text = String(systolic)
         switch systolic {
@@ -252,7 +258,7 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         } //end switch
     } //end updateSystolicLabel()
     
-    //Update text color based on diastolic number to provide user an instant feedback
+    //Update text color based on diastolic value to provide user an instant feedback
     func updateDiastolicLabel(using diastolic: Int) {
         diastolicLabel.text = String(diastolic)
         switch diastolic {
@@ -273,6 +279,28 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     
     
     // MARK: - Navigation
+   
+    /*
+    //Alert user with total amount before submitting order
+    let alert = UIAlertController(title: "Confirm Order", message: "You are about to submit your order with a total of \(formattedOrder)", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Submit", style: .default) { action in
+    self.uploadOrder()
+    })
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    present(alert, animated: true, completion: nil)
+    
+    func uploadOrder() {
+        let menuIds = MenuController.shared.order.menuItems.map { $0.id }
+        MenuController.shared.submitOrder(forMenuIDs: menuIds) { (minutes) in
+            DispatchQueue.main.async {
+                if let minutes = minutes {
+                    self.orderMinutes = minutes
+                    self.performSegue(withIdentifier: "ConfirmationSegue", sender: nil)
+                } //end if-let
+            }
+        } //end closure
+    } //end uploadOrder()
+    */
     
     //Preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -284,10 +312,11 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         let diastolic = diastolicLabel.text!
         let pulse = pulseLabel.text!
         let weight = Double(weightLabel.text!)
+        let weightUnit = weigthUnitLabel.text
         let measurementSite = measurementSiteLabel.text!
         let notes = notesTextView.text!
         
-        bloodPressure = BloodPressure(bpDate: bpDate, systolic: Int(systolic)!, diastolic: Int(diastolic)!, pulse: Int(pulse)!, weight: weight, measurementSite: measurementSite, notes: notes)
+        bloodPressure = BloodPressure(bpDate: bpDate, systolic: Int(systolic)!, diastolic: Int(diastolic)!, pulse: Int(pulse)!, weight: weight, weightUnit: weightUnit, measurementSite: measurementSite, notes: notes)
     } //end prepare(for segue:)
 
 } //end HomeTableViewController{}

@@ -15,12 +15,12 @@ class BloodPressureTableViewCell: UITableViewCell {
     @IBOutlet weak var bloodPressureLabel: UILabel!
     
     //Color variables
-    let bpBlue = UIColor.init(red: CGFloat(0), green: CGFloat(191)/255, blue: CGFloat(255)/255, alpha: 1.0)
-    let bpGreen = UIColor.init(red: CGFloat(128)/255, green: CGFloat(255)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpYellow = UIColor.init(red: CGFloat(255)/255, green: CGFloat(255)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpBrown = UIColor.init(red: CGFloat(255)/255, green: CGFloat(191)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpOrange = UIColor.init(red: CGFloat(255)/255, green: CGFloat(128)/255, blue: CGFloat(0), alpha: 1.0)
-    let bpRed = UIColor.init(red: CGFloat(255)/255, green: CGFloat(64)/255, blue: CGFloat(0), alpha: 1.0)
+    let bpBlue = UIColor(red: 0.0, green: 191.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    let bpGreen = UIColor(red: 128.0/255.0, green: 1.0, blue: 0.0, alpha: 1.0)
+    let bpYellow = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+    let bpBrown = UIColor(red: 1.0, green: 191.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpOrange = UIColor(red: 1.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpRed = UIColor(red: 1.0, green: 64.0/255.0, blue: 0.0, alpha: 1.0)
     
     //Set cell properties with blood pressure values
     func update(with bloodPressure: BloodPressure) {
@@ -30,6 +30,7 @@ class BloodPressureTableViewCell: UITableViewCell {
         let bloodPressureText = "\(bloodPressure.systolic) / \(bloodPressure.diastolic) mmHg"
         let attributedBPText = NSMutableAttributedString(string: bloodPressureText)
         
+        //Set text color based on the systolic value for user feedback
         let systolic = bloodPressure.systolic
         switch systolic {
         case 0...89: //Low blood pressure
@@ -46,6 +47,7 @@ class BloodPressureTableViewCell: UITableViewCell {
             attributedBPText.addAttribute(NSAttributedString.Key.foregroundColor, value: bpRed, range: NSRange(location: 0, length: 3))
         } //end switch
         
+        //Set text color based on the diastolic value for user feedback
         let diastolicIndex: Int = String(bloodPressure.systolic).count + 3
         let diastolic = bloodPressure.diastolic
         switch diastolic {
@@ -63,6 +65,7 @@ class BloodPressureTableViewCell: UITableViewCell {
             attributedBPText.addAttribute(NSAttributedString.Key.foregroundColor, value: bpRed, range: NSRange(location: diastolicIndex, length: 3))
         } //end switch
         
+        //Change font size of blood pressure unit to de-emphasize
         attributedBPText.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20), range: NSRange(location: bloodPressureText.count - 4, length: 4))
         
         bloodPressureLabel.attributedText = attributedBPText

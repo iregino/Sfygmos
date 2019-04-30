@@ -16,6 +16,7 @@
 		F9AF2D48226A385B00EFA974 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D47226A385B00EFA974 /* BloodPressure.swift */; };
 		F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */; };
 		F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */; };
+		F9FC05952278A68400C32A5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC05942278A68400C32A5D /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F9AF2D47226A385B00EFA974 /* BloodPressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
 		F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTableViewCell.swift; sourceTree = "<group>"; };
+		F9FC05942278A68400C32A5D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */,
+				F9FC05942278A68400C32A5D /* ProfileViewController.swift */,
 				F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */,
 				F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */,
 			);
@@ -175,6 +178,7 @@
 				F9A610AB2260039A009B26E9 /* AppDelegate.swift in Sources */,
 				F9AF2D46226A379000EFA974 /* User.swift in Sources */,
 				F9AF2D48226A385B00EFA974 /* BloodPressure.swift in Sources */,
+				F9FC05952278A68400C32A5D /* ProfileViewController.swift in Sources */,
 				F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */,
 				F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */,
 			);

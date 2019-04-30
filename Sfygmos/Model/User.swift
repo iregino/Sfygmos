@@ -12,7 +12,9 @@ struct User {
     var firstName: String
     var lastName: String
     var dateOfBirth: Date
-    var gender: String?
+    var gender: String
+    var bloodType: String?
     var email: String?
     var bloodPressures: [BloodPressure]?
 }
+

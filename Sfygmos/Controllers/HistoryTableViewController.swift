@@ -74,7 +74,7 @@ class HistoryTableViewController: UITableViewController {
     // MARK: - Navigation
 
     //Save the information passed by segue from from view
-    @IBAction func unwindToBloodPressureHistory(segue: UIStoryboardSegue) {
+    @IBAction func unwindToHistory(segue: UIStoryboardSegue) {
      
         guard segue.identifier == "saveUnwind" else { return }
         let sourceVC = segue.source as! HomeTableViewController

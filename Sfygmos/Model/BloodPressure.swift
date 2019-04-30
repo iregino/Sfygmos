@@ -14,6 +14,7 @@ struct BloodPressure: Codable {
     var diastolic: Int
     var pulse: Int
     var weight: Double?
+    var weightUnit: String?
     var measurementSite: String
     var notes: String?
     
