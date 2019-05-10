@@ -45,13 +45,25 @@ class HistoryTableViewController: UITableViewController {
         //Configure cell
         cell.update(with: bloodPressure)
         cell.showsReorderControl = true
-
+        
+        // add border and color
+//        cell.backgroundColor = UIColor.white
+//        cell.layer.borderColor = UIColor.black.cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 8
+//        cell.clipsToBounds = true
+        
         //Return cell to view
         return cell
     }
     
+    // Set the spacing between sections
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
     //Override to set row height
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt: IndexPath) -> CGFloat {
         return CGFloat(100)
     } //end tableView(:heightForRowAt:)
     

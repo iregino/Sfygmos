@@ -9,7 +9,7 @@
 import UIKit
 
 class BloodPressureTableViewCell: UITableViewCell {
-
+    
     //Outlets
     @IBOutlet weak var bpDateLabel: UILabel!
     @IBOutlet weak var bloodPressureLabel: UILabel!

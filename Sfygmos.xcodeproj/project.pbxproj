@@ -17,6 +17,7 @@
 		F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */; };
 		F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */; };
 		F9FC05952278A68400C32A5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC05942278A68400C32A5D /* ProfileViewController.swift */; };
+		F9FC05972278D61500C32A5D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC05962278D61500C32A5D /* RadioButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTableViewCell.swift; sourceTree = "<group>"; };
 		F9FC05942278A68400C32A5D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F9FC05962278D61500C32A5D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				F9A610BC226037C4009B26E9 /* HomeTableViewController.swift */,
-				F9FC05942278A68400C32A5D /* ProfileViewController.swift */,
 				F9AF2D4A226A41FB00EFA974 /* HistoryTableViewController.swift */,
 				F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */,
+				F9FC05942278A68400C32A5D /* ProfileViewController.swift */,
+				F9FC05962278D61500C32A5D /* RadioButton.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				F9FC05952278A68400C32A5D /* ProfileViewController.swift in Sources */,
 				F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */,
 				F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */,
+				F9FC05972278D61500C32A5D /* RadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
