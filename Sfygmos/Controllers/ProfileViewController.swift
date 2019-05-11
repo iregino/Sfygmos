@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    //MARK: - Properties
+    
     //Outlets
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -19,6 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var otherRadioButton: RadioButton!
     @IBOutlet weak var bloodTypeTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     //Variables
     private var datePicker: UIDatePicker?
@@ -31,9 +34,14 @@ class ProfileViewController: UIViewController {
 //        otherRadioButton.isSelected = false
 //    }
     
+    //MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        saveButton.layer.cornerRadius = 5.0
+        updateSaveButtonState()
+        
         femaleRadioButton.isSelected = false
         maleRadioButton.isSelected = false
         otherRadioButton.isSelected = false
@@ -92,6 +100,41 @@ class ProfileViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dateOfBirthTextField.text = dateFormatter.string(from: datePicker.date)
     } //end dateChanged()
+    
+    // When textfield editing is done, update save button state
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    
+    // Update the state of the save button: enable when required textfields are populated
+    func updateSaveButtonState() {
+        
+        // Grab values from text fields to local variables
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let dOB = dateOfBirthTextField.text ?? ""
+
+        // Enable save button if all text fields are not empty
+        saveButton.isEnabled = !firstName.isEmpty &&
+            !lastName.isEmpty && !dOB.isEmpty
+        saveButton.alpha = saveButton.isEnabled ? 1.0 : 0.5
+        
+    } // end updateSaveButtonState()
+    
+    //
+    @IBAction func saveProfileButtonTapped(_ sender: UIButton) {
+        
+        //Animate the button when the user taps it
+        UIView.animate(withDuration: 0.3) {
+            self.saveButton.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+            self.saveButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+    } //end saveProfileButtonTapped()
+    
+
+    
+    //MARK: - Navigation Methods
     
     //Preparation for navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95D22412286040800421BE8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D22402286040800421BE8 /* ChartViewController.swift */; };
 		F9A610AB2260039A009B26E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A610AA2260039A009B26E9 /* AppDelegate.swift */; };
 		F9A610B02260039A009B26E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A610AE2260039A009B26E9 /* Main.storyboard */; };
 		F9A610B22260039B009B26E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A610B12260039B009B26E9 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F95D22402286040800421BE8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		F9A610A72260039A009B26E9 /* Sfygmos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sfygmos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A610AA2260039A009B26E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A610AF2260039A009B26E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				F9AF2D4C2271002200EFA974 /* BloodPressureTableViewCell.swift */,
 				F9FC05942278A68400C32A5D /* ProfileViewController.swift */,
 				F9FC05962278D61500C32A5D /* RadioButton.swift */,
+				F95D22402286040800421BE8 /* ChartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				F9AF2D46226A379000EFA974 /* User.swift in Sources */,
 				F9AF2D48226A385B00EFA974 /* BloodPressure.swift in Sources */,
 				F9FC05952278A68400C32A5D /* ProfileViewController.swift in Sources */,
+				F95D22412286040800421BE8 /* ChartViewController.swift in Sources */,
 				F9AF2D4D2271002200EFA974 /* BloodPressureTableViewCell.swift in Sources */,
 				F9AF2D4B226A41FB00EFA974 /* HistoryTableViewController.swift in Sources */,
 				F9FC05972278D61500C32A5D /* RadioButton.swift in Sources */,

@@ -18,6 +18,7 @@ class HistoryTableViewController: UITableViewController {
 
         if let savedBPs = BloodPressure.loadBloodPressures() {
             bpHistory = savedBPs //load saved blood pressures from documents directory
+            bpHistory.sort(by: { $0.bpDate > $1.bpDate })
         }
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
@@ -46,6 +47,13 @@ class HistoryTableViewController: UITableViewController {
         cell.update(with: bloodPressure)
         cell.showsReorderControl = true
         
+        // first create UIImageView
+        let imageView : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.image = UIImage(named: "chevron1.png")
+        
+        // then set it as cellAccessoryType
+        cell.accessoryView = imageView
+        
         // add border and color
 //        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor
@@ -57,10 +65,10 @@ class HistoryTableViewController: UITableViewController {
         return cell
     }
     
-    // Set the spacing between sections
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
-    }
+//    // Set the spacing between sections
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 10
+//    }
     
     //Override to set row height
     override func tableView(_ tableView: UITableView, heightForRowAt: IndexPath) -> CGFloat {

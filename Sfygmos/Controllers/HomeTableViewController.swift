@@ -53,6 +53,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).font = UIFont.systemFont(ofSize: 15, weight: .light)
+        
         self.systolicPicker.delegate = self
         self.systolicPicker.dataSource = self
         self.diastolicPicker.delegate = self
@@ -239,6 +241,16 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         
     } //end tableView(:didSelectRowAt:)
 
+    // Set the header spacing between sections
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    // Set the footer spacing between sections
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
     //Update text color based on systolic value to provide user an instant feedback
     func updateSystolicLabel(using systolic: Int) {
         systolicLabel.text = String(systolic)
