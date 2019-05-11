@@ -751,7 +751,7 @@
             </objects>
             <point key="canvasLocation" x="3041" y="1659"/>
         </scene>
-        <!--Clinic-->
+        <!--Doctors-->
         <scene sceneID="zAh-rW-Gtc">
             <objects>
                 <viewController id="CAq-7T-f6G" sceneMemberID="viewController">
@@ -761,7 +761,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yw7-wX-xqh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Clinic" image="map_marker" id="V6x-iv-hB5"/>
+                    <tabBarItem key="tabBarItem" title="Doctors" image="map_marker" id="V6x-iv-hB5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbG-av-a6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

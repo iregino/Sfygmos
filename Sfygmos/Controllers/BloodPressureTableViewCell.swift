@@ -16,10 +16,10 @@ class BloodPressureTableViewCell: UITableViewCell {
     
     //Color variables
     let bpBlue = UIColor(red: 0.0, green: 191.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-    let bpGreen = UIColor(red: 128.0/255.0, green: 1.0, blue: 0.0, alpha: 1.0)
-    let bpYellow = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
-    let bpBrown = UIColor(red: 1.0, green: 191.0/255.0, blue: 0.0, alpha: 1.0)
-    let bpOrange = UIColor(red: 1.0, green: 128.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpGreen = UIColor(red: 107.0/255.0, green: 214.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpYellow = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+    let bpBrown = UIColor(red: 1.0, green: 200.0/255.0, blue: 0.0, alpha: 1.0)
+    let bpOrange = UIColor(red: 1.0, green: 128.0/255.0, blue: 20.0/255.0, alpha: 1.0)
     let bpRed = UIColor(red: 1.0, green: 64.0/255.0, blue: 0.0, alpha: 1.0)
     
     //Set cell properties with blood pressure values
